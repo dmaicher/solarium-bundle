@@ -2,6 +2,7 @@
     "name": "dama/solarium-bundle",
     "description": "Integrates the Solarium library as a Symfony bundle",
     "type": "symfony-bundle",
+    "keywords": ["Solarium", "Solr", "Symfony", "search", "bundle"],
     "license": "MIT",
     "authors": [
         {
