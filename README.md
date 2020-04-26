@@ -5,7 +5,7 @@
 The DAMASolariumBundle provides integration with the [solarium](http://www.solarium-project.org)
 solr client library.
 
-This Bundle is based on [NelmioSolariumBundle](https://github.com/nelmio/NelmioSolariumBundle).
+This Bundle is partially based on [NelmioSolariumBundle](https://github.com/nelmio/NelmioSolariumBundle) and is fully compatible with Symfony 5 and Solarium 5.2.
 
 ## Installation
 
