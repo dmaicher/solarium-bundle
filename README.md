@@ -2,7 +2,7 @@
 
 ## About
 
-The DAMASolariumBundle provides integration with the [solarium](http://www.solarium-project.org)
+The DAMASolariumBundle provides integration with the [Solarium](http://www.solarium-project.org)
 solr client library.
 
 This Bundle is partially based on [NelmioSolariumBundle](https://github.com/nelmio/NelmioSolariumBundle) and is fully compatible with Symfony 5 and Solarium 5.2.
@@ -119,7 +119,7 @@ dama_solarium:
     $anotherOneClient = $this->get('solarium.client.anotherOne');
 ```
 
-Starting from Solarium 3.x you can also have multiple endpoints within the same client
+You can also have multiple endpoints within the same client
 
 ```yaml
 dama_solarium:
@@ -171,9 +171,10 @@ dama_solarium:
 
 ## Client registry
 
-You can also use the service ```solarium.client_registry``` to access the clients you have configured using the names you have used in the configuration (with the example above):
+You can also use the service ```solarium.client_registry``` to access the clients you have configured using the names you have used in the configuration (with the example above).
 
 ```php
+/** @var DAMA\SolariumBundle\ClientRegistryInterface $registry */
 $registry = $this->get('solarium.client_registry');
 $firstOne = $registry->getClient('firstOne');
 $secondOne = $registry->getClient('secondOne');
