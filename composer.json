@@ -9,14 +9,18 @@
             "email": "mail@dmaicher.de"
         }
     ],
+    "config": {
+        "sort-packages": true
+    },
     "require": {
         "php": "^7.1",
-        "symfony/framework-bundle": "^4.4 || ^5.0",
-        "solarium/solarium": "^5.2"
+        "solarium/solarium": "^5.2",
+        "symfony/framework-bundle": "^4.4 || ^5.0"
     },
     "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.16",
         "phpstan/phpstan": "^0.12.19",
-        "phpunit/phpunit": "^9.1",
+        "phpunit/phpunit": "^7.5 || ^8.5 || ^9.1",
         "symfony/phpunit-bridge": "^5.0"
     },
     "autoload": {
