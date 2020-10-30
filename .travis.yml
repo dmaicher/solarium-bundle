@@ -10,7 +10,7 @@ php:
 
 env:
   - SYMFONY_REQUIRE="4.4.*"
-  - SYMFONY_REQUIRE="5.0.*"
+  - SYMFONY_REQUIRE="5.1.*"
 
 matrix:
   include:
@@ -18,10 +18,12 @@ matrix:
       env:
         - SYMFONY_REQUIRE="4.4.*"
         - SOLARIUM_REQUIRE="^5.2"
+        - CS_FIXER=1
 
-    - php: 7.4
+    - php: nightly
       env:
         - SYMFONY_REQUIRE="5.1.*"
+        - STABILITY=dev
 
 before_install:
     - phpenv config-rm xdebug.ini || echo "xDebug not disabled"
@@ -29,8 +31,10 @@ before_install:
 
 install:
   - rm -rf composer.lock vendor/*
+  - if [[ ${STABILITY} ]]; then composer config minimum-stability ${STABILITY}; fi;
   - if [[ ${SOLARIUM_REQUIRE} ]]; then composer req solarium/solarium $SOLARIUM_REQUIRE; fi
   - composer update
 
 script:
-  - make build
+    - if [[ ${CS_FIXER} == "1" ]]; then make php_cs_fixer_check; fi
+    - make build
