@@ -33,7 +33,7 @@ install:
   - rm -rf composer.lock vendor/*
   - if [[ ${STABILITY} ]]; then composer config minimum-stability ${STABILITY}; fi;
   - if [[ ${SOLARIUM_REQUIRE} ]]; then composer req solarium/solarium $SOLARIUM_REQUIRE; fi
-  - composer update
+  - composer update --prefer-dist
 
 script:
     - if [[ ${CS_FIXER} == "1" ]]; then make php_cs_fixer_check; fi
