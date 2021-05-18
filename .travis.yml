@@ -10,7 +10,7 @@ php:
 
 env:
   - SYMFONY_REQUIRE="4.4.*"
-  - SYMFONY_REQUIRE="5.1.*"
+  - SYMFONY_REQUIRE="5.2.*"
 
 matrix:
   include:
@@ -20,9 +20,9 @@ matrix:
         - SOLARIUM_REQUIRE="^5.2"
         - CS_FIXER=1
 
-    - php: nightly
+    - php: 8.0
       env:
-        - SYMFONY_REQUIRE="5.1.*"
+        - SYMFONY_REQUIRE="5.2.*"
         - STABILITY=dev
 
 before_install:
