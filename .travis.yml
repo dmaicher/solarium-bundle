@@ -22,7 +22,7 @@ matrix:
 
     - php: 8.0
       env:
-        - SYMFONY_REQUIRE="5.2.*"
+        - SYMFONY_REQUIRE="6.0.*"
         - STABILITY=dev
 
 before_install:
