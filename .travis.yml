@@ -17,7 +17,6 @@ matrix:
     - php: 7.1
       env:
         - SYMFONY_REQUIRE="4.4.*"
-        - SOLARIUM_REQUIRE="^5.2"
         - CS_FIXER=1
 
     - php: 8.0
@@ -32,7 +31,6 @@ before_install:
 install:
   - rm -rf composer.lock vendor/*
   - if [[ ${STABILITY} ]]; then composer config minimum-stability ${STABILITY}; fi;
-  - if [[ ${SOLARIUM_REQUIRE} ]]; then composer req solarium/solarium $SOLARIUM_REQUIRE; fi
   - composer update --prefer-dist
 
 script:
