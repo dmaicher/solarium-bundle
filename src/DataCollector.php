@@ -155,6 +155,16 @@ final class DataCollector extends SolariumPlugin implements DataCollectorInterfa
         $this->currentEndpoint = null;
     }
 
+    public function __serialize(): array
+    {
+        return $this->data;
+    }
+
+    public function __unserialize(array $data): void
+    {
+        $this->data = $data;
+    }
+
     public function serialize()
     {
         return serialize($this->data);
