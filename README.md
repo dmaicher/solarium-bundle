@@ -1,4 +1,4 @@
-# DAMASolarium Bundle
+# !! ABANDONED !! Use `nelmio/solarium-bundle` instead
 
 ## About
 
